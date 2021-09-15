@@ -5,11 +5,11 @@ const $weather = $('#weather');
 const $input = $('input[type="text"]')
 const $catImg = $('#catimg')
 
-async function getWeatherData(event){
+function getWeatherData(event){
     
       userInput = $input.val();
-    await $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=01a0da2a36f369665070a8130312e823&units=imperial` 
+    $.ajax({
+      url: `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=56f272dd8bbe1d5d168b496cc64bb1a9&units=imperial` 
     }).then(
       (data) => {
           if (data.Response === "False"){
@@ -26,9 +26,9 @@ async function getWeatherData(event){
     );
   }
 
- async function getCatData(event){
+ function getCatData(event){
       ;
-  await $.ajax({
+    $.ajax({
         url: `https://api.thecatapi.com/v1/images/search` 
       }).then(
         (catData) => {
@@ -45,7 +45,11 @@ async function getWeatherData(event){
       );
 }
 function renderCat(catData){
-    $catImg.prepend(`<img src = "${catData[0].url}" />`)
+    $catImg.html("");
+    $catImg.append(`<img id = "kitty" src = "${catData[0].url}" width = 400 height = 300 />`);
+    $("#kitty").css("border-radius", "60%")
+    $("#kitty").css("border", "solid 6px pink")
+    
 }
   function renderWeather(data){
     $cityName.text(data.name);
