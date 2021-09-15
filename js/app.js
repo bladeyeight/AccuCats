@@ -5,10 +5,10 @@ const $weather = $('#weather');
 const $input = $('input[type="text"]')
 const $catImg = $('#catimg')
 
-function getWeatherData(event){
-    event.preventDefault();
+async function getWeatherData(event){
+    
       userInput = $input.val();
-    $.ajax({
+    await $.ajax({
       url: `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=01a0da2a36f369665070a8130312e823&units=imperial` 
     }).then(
       (data) => {
@@ -16,7 +16,8 @@ function getWeatherData(event){
               alert("City not found!");
             }
         console.log(data);
-        $(document).ajaxStop(renderWeather(data));
+        renderWeather(data);
+    
   
       },
       (error) => {
@@ -25,9 +26,9 @@ function getWeatherData(event){
     );
   }
 
-  function getCatData(event){
-      event.preventDefault();
-    $.ajax({
+ async function getCatData(event){
+      ;
+  await $.ajax({
         url: `https://api.thecatapi.com/v1/images/search` 
       }).then(
         (catData) => {
@@ -35,7 +36,7 @@ function getWeatherData(event){
                 alert("Cat not found!");
               }
           console.log(catData);
-          $(document).ajaxStop(renderCat(catData));
+     renderCat(catData);
     
         },
         (error) => {
@@ -52,4 +53,10 @@ function renderCat(catData){
     $feels.text(data.main.feels_like);
     $weather.text(data.weather[0].main)};
 
-    $('form').on('submit', getWeatherData, getCatData);
+  $('form').on('submit', doAjax);
+
+  async function doAjax(event){
+      event.preventDefault();
+      await getCatData();
+      await getWeatherData();
+  }
