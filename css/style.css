@@ -5,13 +5,104 @@ body {
 
 h1 {
     text-align: center;
+    font-family: satisfy;
+    font-size: 70px;
+}
+
+#yellow {
+    color: yellow
+}
+
+ main {
+    text-align:center;
+    margin: auto;
+} 
+
+form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#city-button  {
+    background-color: blue !important;
+    border-color: blue !important;
+    color: yellow !important;
+    display:inline-block; 
+}
+
+#city-text {
+    display:inline-block; 
+    background-color: yellow !important;
+    border-color: yellow !important;
+    color: blue !important;
+    
+    
 
 }
 
-main {
+
+ #city-name {
+    position: relative;
+    bottom: 80px;
+    left: 240px;
+    margin-right: auto;
+    margin-left: auto;
+    color: blue;
+}
+
+ #temp { 
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 50px;
+    left: 115px;
+    color: blue;
+}
+
+#feels {
+    position: relative;
+    bottom: 20px;
+    color: blue;
+}
+
+
+#label1 {
+    position: relative;
+    bottom: 80px;
+    
+    color: yellow;
+}
+
+#label2 {
+    position: relative;
+    right: 165px;
+    bottom: 50px;
+    
+    color: yellow;
+    
+}
+
+#label3 {
+    position: relative;
+    right: 285px;
+    bottom: 20px;
+    color: yellow;
+}
+
+form {
+    position: relative;
     text-align: center;
+    bottom: 40px;
 }
 
-#kitty {
-  
-}
+ p {
+     display: inline-block;
+     margin-left: auto;
+     margin-right: auto;
+     
+     
+     
+     
+} 
+
+

@@ -1,9 +1,11 @@
 const $cityName = $('#city-name');
 const $temp = $("#temp");
 const $feels = $('#feels');
-const $weather = $('#weather');
 const $input = $('input[type="text"]')
 const $catImg = $('#catimg')
+const $label1 = $('#label1')
+const $label2 = $('#label2')
+const $label3 = $('#label3')
 
 function getWeatherData(event){
     
@@ -49,13 +51,21 @@ function renderCat(catData){
     $catImg.append(`<img id = "kitty" src = "${catData[0].url}" width = 400 height = 300 />`);
     $("#kitty").css("border-radius", "60%")
     $("#kitty").css("border", "solid 6px pink")
+    $("#kitty").css("display", "block")
+    $("#kitty").css("margin-left", "auto")
+    $("#kitty").css("margin-right", "auto")
+    $("#kitty").css("position", "relative")
+    $("#kitty").css("bottom", "30px")
     
 }
   function renderWeather(data){
-    $cityName.text(data.name);
+      $label1.text("Weather:  ");
+      $label2.text("Temperature:  ");
+      $label3.text("Feels Like:  ");
+    $cityName.text(data.weather[0].description);
     $temp.text(data.main.temp);
     $feels.text(data.main.feels_like);
-    $weather.text(data.weather[0].main)};
+  }
 
   $('form').on('submit', doAjax);
 
