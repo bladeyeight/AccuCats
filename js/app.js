@@ -11,7 +11,7 @@ function getWeatherData(event){
     
       userInput = $input.val();
     $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=56f272dd8bbe1d5d168b496cc64bb1a9&units=imperial` 
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=56f272dd8bbe1d5d168b496cc64bb1a9&units=imperial` 
     }).then(
       (data) => {
           if (data.Response === "False"){
