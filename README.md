@@ -17,7 +17,7 @@ A simple web application that displays the weather data for any city in the worl
 
 ## Getting Started
 
-[Click Here](accucats.vercel.app) to go to the app and try typing your city name or zip code into the text bar to get started!
+[Click Here](https://accucats.vercel.app) to go to the app and try typing your city name or zip code into the text bar to get started!
 
 ## Future Enhancements
 
