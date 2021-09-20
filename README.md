@@ -13,7 +13,9 @@ A simple web application that displays the weather data for any city in the worl
 
 ## Screenshots
 
-![what it looks like](https://imgur.com/a/S1xrdPH)
+![what it looks like](https://i.imgur.com/56MGlZg.png)
+
+![what it looks like](https://i.imgur.com/kGJlkuA.png)
 
 ## Getting Started
 
